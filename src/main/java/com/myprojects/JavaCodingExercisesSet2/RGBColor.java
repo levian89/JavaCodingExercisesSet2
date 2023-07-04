@@ -34,7 +34,7 @@ public class RGBColor {
 
     // Method to invert the color. The inversion is done by subtracting each color component from 255.
     public void invert() {
-        if(red <=255 && green<=255 && blue<=255) {
+        if((red >=0 && red <=255) && (green>=0 && green<=255) && (blue>=0 && blue<=255)) {
             this.red = 255 - this.red;
             System.out.println(red);
             this.green = 255 - this.green;
@@ -47,10 +47,10 @@ public class RGBColor {
     }
 
     public static void main(String[] args) {
-        RGBColor rgbColor = new RGBColor(255, 200, 100);
+        RGBColor rgbColor = new RGBColor(255, 100, 100);
         rgbColor.invert();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the integer value for the three color value (ranges between 0 and 250):");
+        System.out.println("Enter the integer value for the three color value (ranges between 0 and 255):");
         System.out.println("For red: ");
         int redValue = scanner.nextInt();
         System.out.println("For green: ");
